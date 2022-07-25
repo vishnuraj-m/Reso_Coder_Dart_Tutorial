@@ -8,3 +8,5 @@
 
 - string, int, double, num, bool, dynamic, var, final, const, Non Nullability
 
+### Operators
+
