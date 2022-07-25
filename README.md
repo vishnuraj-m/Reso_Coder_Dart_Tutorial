@@ -6,5 +6,5 @@
 
 ### Variables_and_Primitive_Types
 
-- string, int, double, num, bool, dynamic, var, final, const
+- string, int, double, num, bool, dynamic, var, final, const, Non Nullability
 
