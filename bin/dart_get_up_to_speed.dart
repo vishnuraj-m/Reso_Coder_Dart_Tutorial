@@ -1,25 +1,21 @@
 void main(List<String> arguments) {
-  String myString = 'Hello World';
+  String myString = 'String Hello World';
+  myString = 'String New Hello World';
   print(myString);
-  print(myString.contains('Hello'));
 
-  int myInteger = 5;
-  print(myInteger.toString());
-  print(myInteger.isEven);
+  var myString1 = 'Var Hello World';
+  myString1 = 'Var New Hello World';
+  print(myString1);
 
-  double myDouble = 5.5;
-  print(myDouble);
+  final myString2;
+  myString2 = 'Final New Hello World';
+  print(myString2);
 
-  num myNumber = 3.5;
-  print(myNumber);
+  final myString3 = 'Final New Hello World';
+  //myString3 = 'Final New Hello World'; //! not work in final key word
+  print(myString3);
 
-  bool myBool = true;
-  // myBool = 'Hello'; //!not work
-  print(myBool);
-
-  dynamic mySomething = 5;
-  mySomething = 'Hello';
-  mySomething = false;
-
-  print(mySomething);
+  const myString4 = 'Const Hello World';
+  //myString4 = 'Const Hello World'; //! not work in const key word
+  print(myString4);
 }
