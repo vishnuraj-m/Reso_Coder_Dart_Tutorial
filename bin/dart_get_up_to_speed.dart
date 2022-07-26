@@ -1,30 +1,19 @@
 void main(List<String> arguments) {
-  final names = ['John', 'Jane', 'Mathew'];
+  bool isSignedIn = true;
+  <String>[
+    'This is a fake content.',
+    if (isSignedIn) 'Sign Out' else 'Signed In'
+  ];
 
-  print(names.length);
-  print(names[0]);
+  final x = <String>[
+    for (int i = 0; i < 5; i++) i.toString(),
+    for (final number in [1, 2, 3]) number.toString(),
+  ];
+  print(x);
 
-// !map
+  final list1 = ['hello', 'there'];
+  final list2 = ['what', 'up'];
 
-  final nameLengths = names.map((name) => name.length).toList();
-  print(nameLengths[0]);
-
-  // !where
-
-  final namesFiltered = names.where((name) => name.length == 4);
-  print(namesFiltered);
-
-  for (int i = 0; i < namesFiltered.length; i++) {
-    print(names[i]);
-  }
-
-  // ! For in
-
-  for (final name in namesFiltered) {
-    print(name);
-  }
-
-  //! Fo Each
-  namesFiltered.forEach((name) => print(name));
-  namesFiltered.forEach(print);
+  final list = <String>[...list1, ...list2];
+  print(list);
 }
