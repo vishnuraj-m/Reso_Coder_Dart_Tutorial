@@ -19,3 +19,10 @@
 ### Functions Basics
 - Top Level Functions (aceess anywhre)
 - Nested Function (access only the scope)
+
+### Functions Parameters
+- Positional Parameters ()
+- Optional Positional Parameter ([])
+- Named Optional Parameter ({})
+- Named Required Parameter
+- Combain Named Required Parameter with Positional parameter
