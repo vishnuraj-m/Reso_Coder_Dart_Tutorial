@@ -1,14 +1,29 @@
 void main(List<String> arguments) {
-  final twicePlusFive = twice((x) => x + 5);
-  final result = twicePlusFive(3);
-  print(result);
-}
+  List<int> myList = [1, 2, 3];
+  print(myList.length);
+  print(myList[0]);
 
-// * Function return another function
-typedef IntTransformer = int Function(int);
+  final myList1 = [1, 2, 3, 'hello'];
+  print(myList1);
 
-IntTransformer twice(IntTransformer f) {
-  return (int x) {
-    return f(f(x));
+  <int>[1, 2, 3];
+
+  // ! MAP
+
+  Map<String, dynamic> myMap = {
+    'name': 'Vishnu',
+    'age': 30,
+    'registered': true,
   };
+
+  final name = myMap.length;
+  print(name);
+  print(myMap);
+  print(myMap['name']);
+
+  // !SET
+
+  Set<int> mySet = {1, 2, 3, 2};
+  print(mySet.length);
+  print(mySet);
 }
