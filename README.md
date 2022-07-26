@@ -28,3 +28,8 @@
 - Combain Named Required Parameter with Positional parameter
 
 ### Functions Higher Order
+
+### Collections Basics
+- List (similar as array)
+- Map
+- Set
