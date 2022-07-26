@@ -31,3 +31,5 @@
 
 ### Collections Basics
 - List (similar as array)
+- Map
+- Set
