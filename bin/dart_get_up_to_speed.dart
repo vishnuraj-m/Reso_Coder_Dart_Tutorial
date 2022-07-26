@@ -1,29 +1,30 @@
 void main(List<String> arguments) {
-  List<int> myList = [1, 2, 3];
-  print(myList.length);
-  print(myList[0]);
+  final names = ['John', 'Jane', 'Mathew'];
 
-  final myList1 = [1, 2, 3, 'hello'];
-  print(myList1);
+  print(names.length);
+  print(names[0]);
 
-  <int>[1, 2, 3];
+// !map
 
-  // ! MAP
+  final nameLengths = names.map((name) => name.length).toList();
+  print(nameLengths[0]);
 
-  Map<String, dynamic> myMap = {
-    'name': 'Vishnu',
-    'age': 30,
-    'registered': true,
-  };
+  // !where
 
-  final name = myMap.length;
-  print(name);
-  print(myMap);
-  print(myMap['name']);
+  final namesFiltered = names.where((name) => name.length == 4);
+  print(namesFiltered);
 
-  // !SET
+  for (int i = 0; i < namesFiltered.length; i++) {
+    print(names[i]);
+  }
 
-  Set<int> mySet = {1, 2, 3, 2};
-  print(mySet.length);
-  print(mySet);
+  // ! For in
+
+  for (final name in namesFiltered) {
+    print(name);
+  }
+
+  //! Fo Each
+  namesFiltered.forEach((name) => print(name));
+  namesFiltered.forEach(print);
 }
