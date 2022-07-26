@@ -16,3 +16,6 @@
 ### Loops
 - for, while, do while
 
+### Functions Basics
+- Top Level Functions (aceess anywhre)
+- Nested Function (access only the scope)
