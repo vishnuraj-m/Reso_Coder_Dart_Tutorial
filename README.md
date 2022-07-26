@@ -13,3 +13,6 @@
 ### Conditional Statements
 - if else, switch
 
+### Loops
+- for, while, do while
+
