@@ -37,3 +37,6 @@
 ### Collections Transformation
 - map
 - where
+
+### Collections If For Spread
+- spread
