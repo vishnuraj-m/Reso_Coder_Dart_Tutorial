@@ -26,3 +26,5 @@
 - Named Optional Parameter ({})
 - Named Required Parameter
 - Combain Named Required Parameter with Positional parameter
+
+### Functions Higher Order
