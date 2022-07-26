@@ -33,3 +33,7 @@
 - List (similar as array)
 - Map
 - Set
+
+### Collections Transformation
+- map
+- where
