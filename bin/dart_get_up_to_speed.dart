@@ -1,23 +1,24 @@
 void main(List<String> arguments) {
-  User(name: 'a', photoUrl: 'b').name;
-  User.myMethod();
-  User.minNameLength;
+  final x = Example(1, 2);
+  x._private;
 }
 
-class User {
-  final String name;
-  final String photoUrl;
+class Example {
+  int public;
+  int _private;
 
-  const User({
-    required this.name,
-    required this.photoUrl,
-  });
+  Example(this.public, this._private);
 
-  bool hasLongName() {
-    return name.length > 10;
+  Example.namedConstructor({
+    required this.public,
+    required int privateParameter,
+  }) : _private = privateParameter;
+
+  void myMethod() {
+    _private;
   }
+}
 
-  static void myMethod() {}
-
-  static const minNameLength = 3;
+class NonInstantiable {
+  NonInstantiable._();
 }
