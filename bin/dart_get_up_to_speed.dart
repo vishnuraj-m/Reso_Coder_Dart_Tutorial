@@ -1,19 +1,36 @@
-enum AccountType { free, premium, vip }
-
 void main(List<String> arguments) {
-  final userAccountType = AccountType.premium;
-  print(userAccountType.index);
-  print(AccountType.values[0]);
+  // ! Constructor
+  User myUser = const User(
+    name: 'Vishnu Ram',
+    photoUrl: 'http://example.com/abcd',
+  );
+  final user2 = const User(
+    name: 'Vishnu Ram',
+    photoUrl: 'http://example.com/abcd',
+  );
+  final user3 = User(
+    name: 'Vishnu Ram',
+    photoUrl: 'http://example.com/abcd',
+  );
+  const User(
+    name: 'Vishnu Ram',
+    photoUrl: 'http://example.com/abcd',
+  );
 
-  switch (userAccountType) {
-    case AccountType.free:
-      print('0 USD');
-      break;
-    case AccountType.premium:
-      print('20 USD');
-      break;
-    default:
-      print('50 USD');
-      break;
+  print(user2 == user3);
+  user3.hasLongName();
+}
+
+class User {
+  final String name;
+  final String photoUrl;
+
+  const User({
+    required this.name,
+    required this.photoUrl,
+  });
+
+  bool hasLongName() {
+    return name.length > 10;
   }
 }
