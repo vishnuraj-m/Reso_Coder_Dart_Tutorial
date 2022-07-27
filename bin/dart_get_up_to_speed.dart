@@ -1,24 +1,7 @@
 void main(List<String> arguments) {
-  // ! Constructor
-  User myUser = const User(
-    name: 'Vishnu Ram',
-    photoUrl: 'http://example.com/abcd',
-  );
-  final user2 = const User(
-    name: 'Vishnu Ram',
-    photoUrl: 'http://example.com/abcd',
-  );
-  final user3 = User(
-    name: 'Vishnu Ram',
-    photoUrl: 'http://example.com/abcd',
-  );
-  const User(
-    name: 'Vishnu Ram',
-    photoUrl: 'http://example.com/abcd',
-  );
-
-  print(user2 == user3);
-  user3.hasLongName();
+  User(name: 'a', photoUrl: 'b').name;
+  User.myMethod();
+  User.minNameLength;
 }
 
 class User {
@@ -33,4 +16,8 @@ class User {
   bool hasLongName() {
     return name.length > 10;
   }
+
+  static void myMethod() {}
+
+  static const minNameLength = 3;
 }
