@@ -40,3 +40,7 @@
 
 ### Collections If For Spread
 - spread
+
+### Enums
+
+### Classes Basics
