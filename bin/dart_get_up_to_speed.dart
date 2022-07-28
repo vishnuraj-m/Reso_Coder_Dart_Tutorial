@@ -1,33 +1,33 @@
 void main(List<String> arguments) {
-  final user = User(
+  final user1 = User(
     firstName: 'Vishnu',
     secondName: 'Ram',
-    email: 'v@r.com',
   );
-  print(user.email);
+  final user2 = User(
+    firstName: 'Vishnu',
+    secondName: 'Ram',
+  );
+  print(user1 == user2);
 }
 
 class User {
   final String firstName;
   final String secondName;
-  String? _email;
 
-  User({
+  const User({
     required this.firstName,
     required this.secondName,
-    required String email,
-  }) {
-    this.email = email;
+  });
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is User &&
+        other.firstName == firstName &&
+        other.secondName == secondName;
   }
 
-  String get fullName => '$firstName $secondName';
-  String get email => _email ?? 'Email not present';
-
-  set email(String value) {
-    if (value.contains('@')) {
-      _email = value;
-    } else {
-      _email = null;
-    }
-  }
+  @override
+  int get hashCode => firstName.hashCode ^ secondName.hashCode;
 }
