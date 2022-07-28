@@ -1,18 +1,7 @@
 import 'package:meta/meta.dart';
 
 void main(List<String> arguments) {
-  final admin = Admin(
-    specialAdminField: 123,
-    firstName: 'Vishnu',
-    lastName: 'Ram',
-  );
-  final user = admin as User;
-  print(user.fullName);
-  print(user is! Admin);
-
-  if (user is Admin) {
-    user.specialAdminField;
-  }
+  final user = User.admin(true);
 }
 
 class User {
@@ -20,6 +9,18 @@ class User {
   final String _lastName;
 
   User(this._firstName, this._lastName);
+
+  factory User.admin(bool admin) {
+    if (admin) {
+      return Admin(
+        specialAdminField: 123,
+        firstName: 'a',
+        lastName: 'b',
+      );
+    } else {
+      return User('c', 'd');
+    }
+  }
 
   String get fullName => '$_firstName $_lastName';
 
