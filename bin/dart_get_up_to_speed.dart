@@ -1,24 +1,33 @@
 void main(List<String> arguments) {
-  final x = Example(1, 2);
-  x._private;
+  final user1 = User(
+    firstName: 'Vishnu',
+    secondName: 'Ram',
+  );
+  final user2 = User(
+    firstName: 'Vishnu',
+    secondName: 'Ram',
+  );
+  print(user1 == user2);
 }
 
-class Example {
-  int public;
-  int _private;
+class User {
+  final String firstName;
+  final String secondName;
 
-  Example(this.public, this._private);
+  const User({
+    required this.firstName,
+    required this.secondName,
+  });
 
-  Example.namedConstructor({
-    required this.public,
-    required int privateParameter,
-  }) : _private = privateParameter;
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
 
-  void myMethod() {
-    _private;
+    return other is User &&
+        other.firstName == firstName &&
+        other.secondName == secondName;
   }
-}
 
-class NonInstantiable {
-  NonInstantiable._();
+  @override
+  int get hashCode => firstName.hashCode ^ secondName.hashCode;
 }
