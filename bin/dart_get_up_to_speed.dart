@@ -1,33 +1,48 @@
+import 'package:meta/meta.dart';
+
 void main(List<String> arguments) {
-  final user1 = User(
+  final admin = Admin(
+    specialAdminField: 123,
     firstName: 'Vishnu',
-    secondName: 'Ram',
+    lastName: 'Ram',
   );
-  final user2 = User(
-    firstName: 'Vishnu',
-    secondName: 'Ram',
-  );
-  print(user1 == user2);
+  final user = admin as User;
+  print(user.fullName);
+  print(user is! Admin);
+
+  if (user is Admin) {
+    user.specialAdminField;
+  }
 }
 
 class User {
-  final String firstName;
-  final String secondName;
+  final String _firstName;
+  final String _lastName;
 
-  const User({
-    required this.firstName,
-    required this.secondName,
-  });
+  User(this._firstName, this._lastName);
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+  String get fullName => '$_firstName $_lastName';
 
-    return other is User &&
-        other.firstName == firstName &&
-        other.secondName == secondName;
+  @mustCallSuper
+  void signOut() {
+    print('Signing Out');
   }
+}
+
+class Admin extends User {
+  final double specialAdminField;
+  Admin({
+    required this.specialAdminField,
+    required String firstName,
+    required String lastName,
+  }) : super(firstName, lastName);
 
   @override
-  int get hashCode => firstName.hashCode ^ secondName.hashCode;
+  String get fullName => 'Admin: ${super.fullName}';
+
+  @override
+  void signOut() {
+    print('Performing admin-specific sign out steps');
+    super.signOut();
+  }
 }
