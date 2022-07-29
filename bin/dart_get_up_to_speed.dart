@@ -1,58 +1,41 @@
-import 'package:meta/meta.dart';
+void main(List<String> arguments) {}
 
-void main(List<String> arguments) {
-  final admin = Admin(
-    specialAdminField: 12,
-    firstName: "Vishnu",
-    lastName: 'Ram',
-  );
+class RegularClass {
+  final int myFiled;
 
-  admin as User;
+  RegularClass(this.myFiled);
 
-  final user = User('Raja', 'Ram');
+  int get publicProperty => 123;
+
+  String getSomething() {
+    return 'Hello';
+  }
 }
 
-abstract class User {
-  final String _firstName;
-  final String _lastName;
-
-  User(this._firstName, this._lastName);
-
-  String get fullName => '$_firstName $_lastName';
-
-  @mustCallSuper
-  void signOut() {
-    print('Signing Out');
+class OtherClass implements RegularClass {
+  @override
+  String getSomething() {
+    // TODO: implement getSomething
+    throw UnimplementedError();
   }
 
-  void myMethod();
-  int get myProperty;
+  @override
+  // TODO: implement myFiled
+  int get myFiled => throw UnimplementedError();
+
+  @override
+  // TODO: implement publicProperty
+  int get publicProperty => throw UnimplementedError();
 }
 
-class Admin extends User {
-  final double specialAdminField;
-  Admin({
-    required this.specialAdminField,
-    required String firstName,
-    required String lastName,
-  }) : super(firstName, lastName);
+abstract class DataReader {
+  dynamic readData();
+}
 
+class IntegerDataReader implements DataReader {
   @override
-  String get fullName => 'Admin: ${super.fullName}';
-
-  @override
-  void signOut() {
-    print('Performing admin-specific sign out steps');
-    super.signOut();
+  dynamic readData() {
+    print('performing logic');
+    return 12345;
   }
-
-  @override
-  void myMethod() {
-    // TODO: implement myMethod
-    super.myMethod();
-  }
-
-  @override
-  // TODO: implement myProperty
-  int get myProperty => throw UnimplementedError();
 }
