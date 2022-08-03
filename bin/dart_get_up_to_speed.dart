@@ -1,41 +1,23 @@
 void main(List<String> arguments) {}
 
-class RegularClass {
-  final int myFiled;
-
-  RegularClass(this.myFiled);
-
-  int get publicProperty => 123;
-
-  String getSomething() {
-    return 'Hello';
-  }
+abstract class DataReader<T> {
+  T readData();
 }
 
-class OtherClass implements RegularClass {
-  @override
-  String getSomething() {
-    // TODO: implement getSomething
-    throw UnimplementedError();
-  }
+void myMethod<T>(T arg) {}
 
+class IntegerDataReader implements DataReader<int> {
   @override
-  // TODO: implement myFiled
-  int get myFiled => throw UnimplementedError();
-
-  @override
-  // TODO: implement publicProperty
-  int get publicProperty => throw UnimplementedError();
-}
-
-abstract class DataReader {
-  dynamic readData();
-}
-
-class IntegerDataReader implements DataReader {
-  @override
-  dynamic readData() {
+  int readData() {
     print('performing logic');
     return 12345;
+  }
+}
+
+class StringDataReader implements DataReader<String> {
+  @override
+  String readData() {
+    print('performing logic');
+    return 'hello world';
   }
 }
