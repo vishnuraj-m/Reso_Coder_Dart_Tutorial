@@ -1,23 +1,36 @@
-void main(List<String> arguments) {}
-
-abstract class DataReader<T> {
-  T readData();
+void main(List<String> arguments) {
+  final bot = ChatBot('123');
+  bot.sendElevatedMessage('Hello');
+  Admin(specialAdminField: 123, firstName: 'Vishnu', lastName: 'Raja')
+      .sendElevatedMessage('hello');
 }
 
-void myMethod<T>(T arg) {}
+class User {
+  final String firstName;
+  final String lastName;
+  User(this.firstName, this.lastName);
+}
 
-class IntegerDataReader implements DataReader<int> {
-  @override
-  int readData() {
-    print('performing logic');
-    return 12345;
+mixin ElevatedClient {
+  void sendElevatedMessage(String text) {
+    print('Sending a message with an elevated importance: $text');
   }
 }
 
-class StringDataReader implements DataReader<String> {
-  @override
-  String readData() {
-    print('performing logic');
-    return 'hello world';
-  }
+class Admin extends User with ElevatedClient {
+  final double specialAdminField;
+  Admin({
+    required this.specialAdminField,
+    required String firstName,
+    required String lastName,
+  }) : super(firstName, lastName);
+}
+
+class ChatBot with ElevatedClient {
+  final String id;
+  ChatBot(this.id);
+
+  // void sendElevatedMessage(String text) {
+  //   print('Sending a message with an elevated importance: $text');
+  // }
 }
