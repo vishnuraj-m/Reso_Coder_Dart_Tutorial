@@ -1,36 +1,24 @@
+// ! Methods
+
+// void main(List<String> arguments) {
+//   final x = 'hello '.duplicate();
+//   print(x);
+// }
+
+// extension StringDuplication on String {
+//   String duplicate() {
+//     return this + this;
+//   }
+// }
+
+// ! properties
 void main(List<String> arguments) {
-  final bot = ChatBot('123');
-  bot.sendElevatedMessage('Hello');
-  Admin(specialAdminField: 123, firstName: 'Vishnu', lastName: 'Raja')
-      .sendElevatedMessage('hello');
+  final x = 'hello '.duplicated;
+  print(x);
 }
 
-class User {
-  final String firstName;
-  final String lastName;
-  User(this.firstName, this.lastName);
-}
-
-mixin ElevatedClient {
-  void sendElevatedMessage(String text) {
-    print('Sending a message with an elevated importance: $text');
+extension StringDuplication on String {
+  String get duplicated {
+    return this + this;
   }
-}
-
-class Admin extends User with ElevatedClient {
-  final double specialAdminField;
-  Admin({
-    required this.specialAdminField,
-    required String firstName,
-    required String lastName,
-  }) : super(firstName, lastName);
-}
-
-class ChatBot with ElevatedClient {
-  final String id;
-  ChatBot(this.id);
-
-  // void sendElevatedMessage(String text) {
-  //   print('Sending a message with an elevated importance: $text');
-  // }
 }
