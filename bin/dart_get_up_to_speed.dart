@@ -1,24 +1,10 @@
-// ! Methods
+part 'other_files.dart';
 
-// void main(List<String> arguments) {
-//   final x = 'hello '.duplicate();
-//   print(x);
-// }
-
-// extension StringDuplication on String {
-//   String duplicate() {
-//     return this + this;
-//   }
-// }
-
-// ! properties
 void main(List<String> arguments) {
-  final x = 'hello '.duplicated;
-  print(x);
+  _oppositeWay();
 }
 
-extension StringDuplication on String {
-  String get duplicated {
-    return this + this;
-  }
+class _PackagePrivateClass {
+  final String _packagePrivateField;
+  _PackagePrivateClass._(this._packagePrivateField);
 }
